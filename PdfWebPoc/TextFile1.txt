@@ -1,0 +1,11 @@
+﻿example based on:
+http://www.codeproject.com/Articles/492739/Exporting-to-Word-PDF-using-Microsoft-Report-RDLC
+http://www.getmscode.com/2014/12/generate-pdf-using-rdlc-c.html
+
+Notes to deploy to azure:
+-	Include references in the project:
+o	Microsoft.ReportViewer.Common
+o	Microsoft.ReportViewer.ProcessingObjectModel (include this one as dll: copy to local:true)
+o	Microsoft.ReportViewer.WebForms
+-	Include the report.rdlc as ‘Content’ + copy to output: always (on the server the report will be in the bin folder)
+-	In the report class: viewer.LocalReport.ReportPath = "bin\\Report1.rdlc";
